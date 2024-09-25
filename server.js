@@ -14,7 +14,7 @@ app.get('/repositories', async (req, res) => {
         const formattedRepos = repos.map(repo => ({
             title: repo.full_name,
             subtitle: repo.description,
-            image: repo.avatar_url // URL do avatar da Blip
+            image: repo.owner.avatar_url // URL do avatar da Blip
         }));
 
         res.json(formattedRepos);
